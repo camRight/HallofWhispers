@@ -3,9 +3,6 @@
 Hall of Whispers is a collaborative React project designed to allow users to connect with others and create Dungeons and Dragons style adventures. RESTful server requests and responses enable CRUD functionality saved in a Mongo Database. A persistent connection with websockets (in the form of websocket.io) allows users to communicate with one another through direct messages enabled via handshaking.
 
 
-Hall of Whispers (HoW) What is HoW? Why is HoW? How do you HoW? Who is Gamora? 
-
-
 ## Table of Contents
 
 * [Installation](#installation)
@@ -75,6 +72,6 @@ GNU General Public License v3.0
 
 ## Links
 
-Heroku:
+Heroku: https://hallofwhispers.herokuapp.com/login
 
-Repo:
+Repo: https://github.com/camRight/HallofWhispers/
