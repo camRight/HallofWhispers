@@ -143,26 +143,12 @@ const Home = () => {
   useEffect(() => {
     scrollToBottom();
     if (!userData.pending && !userData.account) history.push("/login");
-    //if (!userData.account?.charCreated) history.push("/character");
-    //checkLoggedIn();
+    const socket = socketIOClient("http://localhost:5000", {
+      transports: ["websocket"],
+    });
   }, [userData.pending, userData.account, history]);
 
-  //--------------------------------------------
-  //Activate this block of code when appropriate
-  //Function:  If the user is not logged in, will go
-  //back to the login page.
 
-  // const history = useHistory();
-
-  // useEffect(() => {
-  //   if (!userData.account) {
-  //     history.push("/login");
-  //   }
-  // }, [userData.account, history])
-
-  // console.log(userData.character?.length === 0);
-
-  //--------------------------------------------
   return (
     <div className="page-container">
       <Wrapper>
@@ -191,8 +177,8 @@ const Home = () => {
                 <Row>
                   <h4 className="margin-between-form">Adventure Postings</h4>
                   <form onSubmit={handleSubmit}>
-                      <textarea onChange={handleInputChange} type="text" name="message" value={postMessage} className="form-control" placeholder="Post your adventures here!" aria-label="post-message" aria-describedby="button-addon2" id="myInput"/>
-                      <button className="btn btn-success" type="submit" id="button-addon2">Post</button>
+                    <textarea onChange={handleInputChange} type="text" name="message" value={postMessage} className="form-control" placeholder="Post your adventures here!" aria-label="post-message" aria-describedby="button-addon2" id="myInput" />
+                    <button className="btn btn-success" type="submit" id="button-addon2">Post</button>
                   </form>
                 </Row>
                 <Row>
